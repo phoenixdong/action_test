@@ -37,3 +37,4 @@ jobs:
     - name: Test with pytest
       run: |
         pytest tests/unit_tests/test_basic.py
+        pytest tests/unit_tests/test_basic_1.py
