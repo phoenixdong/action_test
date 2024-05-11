@@ -1,2 +1,2 @@
 def test_import():
-    import numpy1
+    import numpy
