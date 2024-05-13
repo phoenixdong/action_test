@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "add_test" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "add_test" ]
 
 permissions:
   contents: read
@@ -15,7 +15,7 @@ permissions:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: self-hosted
 
     steps:
     - uses: actions/checkout@v4
@@ -34,6 +34,9 @@ jobs:
         flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
-    - name: Test with pytest
+    - name: Test with pytest_0
       run: |
-        pytest
+        pytest tests/unit_tests/test_basic.py
+    - name: Test with pytest_1
+      run: |
+        pytest tests/unit_tests/test_basic_1.py
