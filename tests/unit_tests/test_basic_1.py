@@ -1,3 +1,3 @@
 def test_import():
     import pandas
-    import scipy
+    import scipy1
